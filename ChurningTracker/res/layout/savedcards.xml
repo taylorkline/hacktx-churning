@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    
+
+    <!-- //In the BUTTON THING, MUST HAVE ONCLICK METHOD TO GO TO credit card database -->
+    <!-- //For every credit card scanned, must create a button -->
+
+        
+ </LinearLayout>
+ 
