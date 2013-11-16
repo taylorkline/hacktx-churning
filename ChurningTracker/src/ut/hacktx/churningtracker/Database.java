@@ -51,7 +51,7 @@ public class Database {
 	public Database (Context c) {
 		ourContext = c;
 	}
-	
+	//
 	public Database open() {
 		ourHelper = new DbHelper(ourContext);
 		ourDatabase = ourHelper.getWritableDatabase();
