@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.View;
 
 //cardIO app token: 10f00cdf035d444aaef4d8a7a8e3cc5c
+//taylor comment
 
 public class MainActivity extends Activity {
 
