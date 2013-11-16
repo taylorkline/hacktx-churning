@@ -7,15 +7,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.Button;
+=======
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+>>>>>>> branch 'master' of https://github.com/jkdf2/hacktx-churning.git
 
 //cardIO app token: 10f00cdf035d444aaef4d8a7a8e3cc5c
 
 public class MainActivity extends Activity {
 
+	//private static  String = null;
 	public int MY_SCAN_REQUEST_CODE;
 	public String resultDisplayStr;
+<<<<<<< HEAD
 	private Button myCardsButton;
+=======
+	
+	
+	
+	
+>>>>>>> branch 'master' of https://github.com/jkdf2/hacktx-churning.git
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -64,9 +80,12 @@ public class MainActivity extends Activity {
 
 	            // Never log a raw card number. Avoid displaying it, but if necessary use getFormattedCardNumber()
 	            resultDisplayStr = "Card Number: " + scanResult.getRedactedCardNumber() + "\n";
-
+	            
 	            // Do something with the raw number, e.g.:
 	            // myService.setCardNumber( scanResult.cardNumber );
+	            
+	            populateListView(resultDisplayStr);
+	            registerClickerCallback();
 
 	            if (scanResult.isExpiryValid()) {
 	                resultDisplayStr += "Expiration Date: " + scanResult.expiryMonth + "/" + scanResult.expiryYear + "\n";
@@ -86,8 +105,43 @@ public class MainActivity extends Activity {
 	        }
 	        // do something with resultDisplayStr, maybe display it in a textView
 	        // resultTextView.setText(resultStr);
+	        populateListView(resultDisplayStr);
+	        
+	        
 	    }
 	    // else handle other activity results
+	    
 	}
+	
+	
+
+	private void populateListView(String resultDisplayStr2) {
+		// TODO Auto-generated method stub
+		String[] myItems = {resultDisplayStr2}; 
+    	
+    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.da_item, myItems);
+    			
+    	ListView list = (ListView) findViewById(R.id.listViewMain);
+    	list.setAdapter(adapter);
+    	
+		
+	}
+	
+	private void registerClickerCallback() {
+		// TODO Auto-generated method stub
+		ListView list = (ListView) findViewById(R.id.listViewMain);
+		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			public void onItemClick(AdapterView<?> paret, View viewClicked, int position, long id)
+			{
+				TextView textView = (TextView) viewClicked;
+				String message = "Credit Card: " +position + "Number: " + textView.getText().toString();
+				Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+			}
+		});
+	}
+
+	
+	
+	
 	
 }
