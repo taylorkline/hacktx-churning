@@ -74,4 +74,5 @@ public class Database {
 		
 		return ourDatabase.insert(DATABASE_TABLE, null, cv);
 	}
+	
 }

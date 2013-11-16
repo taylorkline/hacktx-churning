@@ -8,7 +8,13 @@ import android.widget.EditText;
 
 public class InsertInformation extends Activity{
 	
-	private EditText newItemText;
+	private EditText cardNameItemText;
+	private EditText monthSignedItemText;
+	private EditText moneySpentItemText;
+	private EditText requiredSpendedItemText;
+	private EditText rewardAmountItemText;
+	private EditText timeFrameItemText;
+	private EditText ;
 	
 	@Override
 	public void onCreate (Bundle savedInstanceState) {
