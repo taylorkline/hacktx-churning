@@ -48,8 +48,8 @@ public class MainActivity extends Activity {
 	}
 	
 	public void onMyCardsPress(View v) {
-		Intent myCardsIntent = new Intent(getApplicationContext(), InsertInformation.class);		
-		startActivity(myCardsIntent);
+		Intent myCardsIntent = new Intent(this, InsertInformation.class);		
+		startActivityForResult(myCardsIntent, 1);
 		
 	}
 
