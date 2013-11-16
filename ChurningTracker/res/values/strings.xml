@@ -6,6 +6,17 @@
     <string name="title">Hack TX \'13</string>
     <string name="scanButton">Scan Now!</string>
     <string name="myCards">My Cards</string>
+    
+    <string name="company">Name of credit card company</string>
+    <string name="month">Month card was issued</string>
+    <string name="money">Money spent using card so far</string>
+    <string name="time">Time frame to collect the bonus</string>
+    <string name="limit">Limit on spending</string>
+    <string name="bonus">Bonus on buying credit card</string>
+    <string name="fee">Annual cost of credit card</string>
+    <string name="Submit">Submit</string>
+    
+    
 
 
 </resources>
