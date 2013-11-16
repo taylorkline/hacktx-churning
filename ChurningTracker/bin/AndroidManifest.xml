@@ -37,6 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Activities responsible for gathering payment info -->
+		<activity android:name="io.card.payment.CardIOActivity" android:configChanges="keyboardHidden|orientation" />
+		<activity android:name="io.card.payment.DataEntryActivity" />
     </application>
 
 </manifest>
