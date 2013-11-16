@@ -1,4 +1,4 @@
 hacktx-churning
 ===============
 
-Our first churning app for HackTX using Card.IO
+Our first app for HackTX using Card.IO to keep track of churning.
