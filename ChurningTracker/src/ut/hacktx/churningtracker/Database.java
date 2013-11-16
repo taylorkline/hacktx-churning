@@ -1,5 +1,6 @@
 package ut.hacktx.churningtracker;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -7,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class Database {
 	public static final String KEY_ROWID = "_id";
 	public static final String KEY_CARD_NAME = "_id";
+	public static final String KEY_MONTH_SIGNED = "_id";
 	public static final String KEY_MONEY_SPENT = "_id";
 	public static final String KEY_LIMIT = "_id";
 	public static final String KEY_BONUS = "_id";
@@ -58,5 +60,18 @@ public class Database {
 	
 	public void close() {
 		ourHelper.close();
+	}
+	
+	public long createEntry(String nameOfCard, String monthSignedUp, String moneySpent, String needToSpend, String bonus, String timeFrame, String fee) {
+		ContentValues cv = new ContentValues();
+		cv.put(KEY_CARD_NAME, nameOfCard);
+		cv.put(KEY_MONTH_SIGNED, monthSignedUp);
+		cv.put(KEY_MONEY_SPENT, moneySpent);
+		cv.put(KEY_LIMIT, needToSpend);
+		cv.put(KEY_BONUS, bonus);
+		cv.put(KEY_TIME_FRAME, timeFrame);
+		cv.put(KEY_FEE, fee);
+		
+		return ourDatabase.insert(DATABASE_TABLE, null, cv);
 	}
 }
