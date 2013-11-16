@@ -32,8 +32,8 @@ public class Database {
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			db.execSQL("CREATE TABLE " + DATABASE_TABLE + " (" + 
-			KEY_ROWID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-			KEY_CARD_NAME + " TEXT NOT NULL, " + 
+			KEY_ROWID + " INTEGER PRIMARY KEY AUTOINCREMENT " +
+			KEY_CARD_NAME + " TEXT NOT NULL " + 
 			KEY_MONEY_SPENT + " TEXT NOT NULL" + 
 			KEY_LIMIT + " TEXT NOT NULL" + 
 			KEY_BONUS + " TEXT NOT NULL" + 
