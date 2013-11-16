@@ -3,7 +3,22 @@
     package="ut.hacktx.churningtracker"
     android:versionCode="1"
     android:versionName="1.0" >
+<!-- Permission to access network state - required -->
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+        <!-- Permission to access internet - required -->
+<uses-permission android:name="android.permission.INTERNET" />
+
+        <!-- Permission to use camera - required -->
+<uses-permission android:name="android.permission.CAMERA" />
+
+        <!-- Permission to vibrate - recommended, allows vibration feedback on scan -->
+<uses-permission android:name="android.permission.VIBRATE" />
+
+        <!-- Camera features - recommended -->
+<uses-feature android:name="android.hardware.camera" android:required="false" />
+<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+<uses-feature android:name="android.hardware.camera.flash" android:required="false" />
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
