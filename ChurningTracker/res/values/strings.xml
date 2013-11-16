@@ -8,12 +8,12 @@
     <string name="myCards">My Cards</string>
     
     <string name="company">Name of credit card company</string>
-    <string name="month">Month card was issued</string>
+    <string name="month">Month card was issued (text string)</string>
     <string name="money">Money spent using card so far</string>
-    <string name="time">Time frame to collect the bonus</string>
-    <string name="limit">Limit on spending</string>
-    <string name="bonus">Bonus on buying credit card</string>
-    <string name="fee">Annual cost of credit card</string>
+    <string name="time">Timeframe, in months, to meet spending requirement</string>
+    <string name="limit">Spending requirement for card bonus</string>
+    <string name="bonus">Value of bonus in dollars</string>
+    <string name="fee">Credit card annual fee</string>
     <string name="Submit">Submit</string>
     <string name="sql">create table</string>
     
