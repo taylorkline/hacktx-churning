@@ -15,14 +15,8 @@
     <string name="bonus">Bonus on buying credit card</string>
     <string name="fee">Annual cost of credit card</string>
     <string name="Submit">Submit</string>
-<<<<<<< HEAD
     <string name="sql">create table</string>
     
 
 
 </resources>
-=======
-   
-    
-    </resources>
->>>>>>> branch 'master' of https://github.com/jkdf2/hacktx-churning.git
