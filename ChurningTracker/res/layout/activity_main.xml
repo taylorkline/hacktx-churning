@@ -36,7 +36,6 @@
     	android:layout_height="wrap_content"
     	android:layout_width="200dp"
    	 	android:text="@string/myCards"
-   	 	android:onClick="onMyCardsPress"
    	 />
     
 </LinearLayout>
