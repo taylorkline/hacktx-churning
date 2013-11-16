@@ -11,26 +11,41 @@ public class InsertInformation extends Activity{
 	private EditText cardNameItemText;
 	private EditText monthSignedItemText;
 	private EditText moneySpentItemText;
-	private EditText requiredSpendedItemText;
+	private EditText requiredSpentItemText;
 	private EditText rewardAmountItemText;
 	private EditText timeFrameItemText;
-	private EditText ;
+	private EditText feeItemText;
 	
 	@Override
 	public void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		newItemText = (EditText) findViewById(R.id.newItemText); //newItemText should be the name of a "text field"
+		cardNameItemText = (EditText) findViewById(R.id.comp);
+		monthSignedItemText = (EditText) findViewById(R.id.mon);
+		moneySpentItemText = (EditText) findViewById(R.id.cash);
+		requiredSpentItemText = (EditText) findViewById(R.id.lim);
+		rewardAmountItemText = (EditText) findViewById(R.id.reward);
+		timeFrameItemText = (EditText) findViewById(R.id.tim);
+		feeItemText = (EditText) findViewById(R.id.fees);
 		
 	}
 	
 	public void submitItem (View view) {
-		String message = newItemText.getText().toString();
+		String cardName = cardNameItemText.getText().toString();
+		String monthSigned = monthSignedItemText.getText().toString();
+		String moneySpent = moneySpentItemText.getText().toString();
+		String requiredSpent = requiredSpentItemText.getText().toString();
+		String rewardAmount = rewardAmountItemText.getText().toString();
+		String timeFrame = timeFrameItemText.getText().toString();
+		String feeItem = feeItemText.getText().toString();
 		
-		Intent i = getIntent();
-		i.putExtra("item", message);
-		setResult(RESULT_OK, i);
-		finish();
+		Database myDatabase = new Database(InsertInformation.this);
+		myDatabase.createEntry(cardName, monthSigned, moneySpent, requiredSpent, rewardAmount, timeFrame, feeItem);
+		
+		//Intent i = getIntent();
+		//i.putExtra("item", message);
+		//setResult(RESULT_OK, i);
+		//finish();
 	}
 	
 }
