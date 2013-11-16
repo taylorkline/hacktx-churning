@@ -1,7 +1,7 @@
 package ut.hacktx.churningtracker;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -19,6 +19,7 @@ public class InsertInformation extends Activity{
 	@Override
 	public void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.database);
 		
 		cardNameItemText = (EditText) findViewById(R.id.comp);
 		monthSignedItemText = (EditText) findViewById(R.id.mon);
@@ -46,6 +47,13 @@ public class InsertInformation extends Activity{
 		//i.putExtra("item", message);
 		//setResult(RESULT_OK, i);
 		//finish();
+		
+		//open Database
+		DbHelper dbHelper = new DbHelper(InsertInformation.this);
+		SQLiteDatabase db = dbHelper.getWritableDatabase();
+		
+		db.close();
+		dbHelper.close();
 	}
 	
 }
