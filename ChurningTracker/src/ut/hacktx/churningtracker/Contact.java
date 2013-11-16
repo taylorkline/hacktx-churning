@@ -11,14 +11,16 @@ public class Contact {
     String _fee;
     String _timeFrame;
     String _month;
+    String _number;
     
      
     // Empty constructor
     public Contact(){
          
     }
+    
     // constructor
-    public Contact(int id, String name, String moneySpent, String needToSpend, String bonus, String fee, String timeFrame, String month){
+    public Contact(int id, String name, String moneySpent, String needToSpend, String bonus, String fee, String timeFrame, String month, String number){
         this._id = id;
         this._name = name;
         this._moneySpent = moneySpent;
@@ -27,10 +29,11 @@ public class Contact {
         this._fee = fee;
         this._timeFrame = timeFrame;
         this._month = month;
+        this._number = number;
     }
      
     // constructor
-    public Contact(String name, String moneySpent, String needToSpend, String bonus, String fee, String timeFrame, String month){
+    public Contact(String name, String moneySpent, String needToSpend, String bonus, String fee, String timeFrame, String month, String number){
         this._name = name;
         this._moneySpent = moneySpent;
         this._needToSpend = needToSpend;
@@ -38,7 +41,9 @@ public class Contact {
         this._fee = fee;
         this._timeFrame = timeFrame;
         this._month = month;
+        this._number = number;
     }
+    
     // getting ID
     public int getID(){
         return this._id;
@@ -113,5 +118,14 @@ public class Contact {
     // setting name
     public void setMonth(String month){
         this._month = month;
+    }
+    // getting name
+    public String getNumber(){
+        return this._number;
+    }
+     
+    // setting name
+    public void setNumber(String number){
+        this._number = number;
     }
 }

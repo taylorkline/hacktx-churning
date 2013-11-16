@@ -30,6 +30,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_FEE = "fee";
     private static final String KEY_TIME_FRAME = "timeFrame";
     private static final String KEY_MONTH = "month";
+    private static String KEY_NUMBER = "number";
     
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -70,6 +71,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_FEE, contact.getFee()); // Contact Phone
         values.put(KEY_TIME_FRAME, contact.getTimeFrame()); // Contact Phone
         values.put(KEY_MONTH, contact.getMonth()); // Contact Phone
+        //values.put(KEY_NUMBER, contact.getNumber()); // Contact Phone
         
         // Inserting Row
         db.insert(TABLE_CONTACTS, null, values);
@@ -88,7 +90,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
  
         Contact card = new Contact(Integer.parseInt(cursor.getString(0)),
                 cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5),
-                cursor.getString(6), cursor.getString(7));
+                cursor.getString(6), cursor.getString(7), cursor.getString(8));
         // return contact
         return card;
     }
@@ -114,6 +116,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 card.setFee(cursor.getString(5));
                 card.setTimeFrame(cursor.getString(6));
                 card.setMonth(cursor.getString(7));
+                card.setNumber(KEY_NUMBER);
                 // Adding contact to list
                 cardList.add(card);
             } while (cursor.moveToNext());
@@ -135,7 +138,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_FEE, card.getFee());
         values.put(KEY_TIME_FRAME, card.getTimeFrame());
         values.put(KEY_MONTH, card.getMonth());
-        
+        //values.put(KEY_NUMBER, card.getNumber());  //second parameter?
  
         // updating row
         return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
@@ -162,4 +165,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return cursor.getCount();
     }
  
+    public void addNumberToDatabase(String number) {   	
+    	KEY_NUMBER = number;
+    }
 }

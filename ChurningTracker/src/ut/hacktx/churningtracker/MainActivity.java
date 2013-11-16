@@ -23,10 +23,13 @@ public class MainActivity extends Activity {
 	public String resultDisplayStr;
 	private Button myCardsButton;
 
+	DatabaseHandler db = new DatabaseHandler(this);
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 		
 		Button myCardsButton = (Button) findViewById(R.id.myCardsButton);
 	}
@@ -70,7 +73,11 @@ public class MainActivity extends Activity {
 	            CreditCard scanResult = data.getParcelableExtra(CardIOActivity.EXTRA_SCAN_RESULT);
 
 	            // Never log a raw card number. Avoid displaying it, but if necessary use getFormattedCardNumber()
-	            resultDisplayStr = "Card Number: " + scanResult.getRedactedCardNumber() + "\n";
+	            resultDisplayStr = "Card Number: " + scanResult.getLastFourDigitsOfCardNumber() + "\n";
+	            db.addNumberToDatabase(resultDisplayStr);
+	            
+	            //getRedactedCardNumber() ******####
+	            //getFormattedCardNumber( ############
 	            
 	            // Do something with the raw number, e.g.:
 	            // myService.setCardNumber( scanResult.cardNumber );
