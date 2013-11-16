@@ -42,6 +42,12 @@ public class MainActivity extends Activity {
 	    // MY_SCAN_REQUEST_CODE is arbitrary and is only used within this activity.
 	    startActivityForResult(scanIntent, MY_SCAN_REQUEST_CODE);
 	}
+	
+	public void onMyCardsPress(View v) {
+		Intent myCardsIntent = new Intent(this, InsertInformation.class);
+		startActivity(myCardsIntent);
+		
+	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
