@@ -3,7 +3,6 @@
     package="ut.hacktx.churningtracker"
     android:versionCode="1"
     android:versionName="1.0" >
-    <!-- taylor comment -->
 <!-- Permission to access network state - required -->
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
