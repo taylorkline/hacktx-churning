@@ -7,15 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-<<<<<<< HEAD
-import android.widget.Button;
-=======
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
->>>>>>> branch 'master' of https://github.com/jkdf2/hacktx-churning.git
 
 //cardIO app token: 10f00cdf035d444aaef4d8a7a8e3cc5c
 
@@ -24,14 +21,8 @@ public class MainActivity extends Activity {
 	//private static  String = null;
 	public int MY_SCAN_REQUEST_CODE;
 	public String resultDisplayStr;
-<<<<<<< HEAD
 	private Button myCardsButton;
-=======
-	
-	
-	
-	
->>>>>>> branch 'master' of https://github.com/jkdf2/hacktx-churning.git
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
